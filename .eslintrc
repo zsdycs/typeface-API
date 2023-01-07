@@ -1,0 +1,43 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "security",
+    "mongodb",
+    "jest",
+    "no-secrets"
+  ],
+  "env": {
+    "node": true,
+    "jest": true,
+    "mongo": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:security/recommended",
+    "airbnb-base"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "impliedStrict": true
+  },
+  "rules": {
+    "no-console": 0,
+    "security/detect-non-literal-regexp": "off",
+    "security/detect-unsafe-regex": "off",
+    "security/detect-object-injection": "off",
+    "no-secrets/no-secrets": "error",
+    "no-useless-escape": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "test/*.test.js",
+          "scripts/*.js"
+        ]
+      }
+    ],
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "linebreak-style": "off"
+  }
+}

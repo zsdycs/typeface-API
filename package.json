@@ -1,0 +1,66 @@
+{
+  "name": "shiguang-api",
+  "version": "1.0.0",
+  "description": "REST API for shiguang-ui",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run lint && npm run check-dependencies && jest --silent --verbose",
+    "start": "node server.js",
+    "dev": "nodemon --inspect server.js",
+    "worker": "node jobs/worker.js",
+    "lint": "eslint . --fix",
+    "check-dependencies": "npx depcheck --ignores=\"pino-pretty\""
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "rest-api",
+    "mongodb",
+    "koa"
+  ],
+  "author": "zsdycs",
+  "dependencies": {
+    "b3b": "^0.0.1",
+    "buffer-to-vinyl": "^1.1.0",
+    "code-points": "^2.0.0-1",
+    "concat-stream": "^2.0.0",
+    "dotenv": "^10.0.0",
+    "fonteditor-core": "^2.1.10",
+    "is-otf": "^0.1.2",
+    "is-svg": "^4.3.2",
+    "is-ttf": "^0.2.2",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-conditional-get": "^3.0.0",
+    "koa-etag": "^4.0.0",
+    "koa-helmet": "^6.1.0",
+    "koa-pino-logger": "^3.0.0",
+    "koa-router": "^10.1.1",
+    "koa2-cors": "^2.0.6",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.20",
+    "pako": "^2.1.0",
+    "pino": "^6.13.1",
+    "replace-ext": "^2.0.0",
+    "stream-combiner": "^0.2.2",
+    "through2": "^4.0.2",
+    "ttf2woff2": "^5.0.0",
+    "vinyl-fs": "^3.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-mongodb": "^1.0.0",
+    "eslint-plugin-no-secrets": "^0.8.9",
+    "eslint-plugin-security": "^1.4.0",
+    "jest": "^27.1.0",
+    "pino-pretty": "^6.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

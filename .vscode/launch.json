@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Shiguang-API",
+      "restart": true,
+      "processId": "${command:PickProcess}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Shiguang-API",
+      "runtimeExecutable": "nodemon",
+      "program": "${workspaceRoot}/server.js",
+      "restart": true,
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "${workspaceRoot}/node_modules/**/*.js",
+        "<node_internals>/**/*.js"
+      ]
+    }
+  ]
+}
