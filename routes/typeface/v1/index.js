@@ -28,15 +28,11 @@ router.post('/', async (ctx) => {
   const tmpFile = path.resolve(`./.tmp/${fileName}`);
   const tmpPath = path.resolve('./.tmp/');
   const sourceFile = path.resolve(`./fontSource/${fileName}`);
-
-  if (existsSync(tmpFile)) {
-    writeFileSync(tmpFile, readFileSync(sourceFile));
-  } else if (existsSync(tmpPath)) {
-    writeFileSync(tmpFile, readFileSync(sourceFile));
-  } else {
+  if (!existsSync(tmpPath)) {
+    // 中间目录路径不存在，创建路径
     mkdirSync(tmpPath);
-    writeFileSync(tmpFile, readFileSync(sourceFile));
   }
+  writeFileSync(tmpFile, readFileSync(sourceFile));
 
   const fontmin = new Fontmin().src(tmpFile);
   fontmin.use(
